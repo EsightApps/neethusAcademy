@@ -23,7 +23,7 @@ class CourseWidgetCard extends StatelessWidget {
           children: [
             Image.asset(courseImage,width: 50.w,height: 50.h,),
             Gap(3.w),
-            KStyles().light15(text: courseName)
+            KStyles().med15(text: courseName)
       
           ],
         ),

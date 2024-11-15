@@ -54,7 +54,7 @@ class _OtpScreenViewState extends State<OtpScreenView> {
               children: [
                 Gap(80.h),
                 Center(child: Lottie.asset(login, animate: true, width: 200.w, height: 200.h)),
-                KStyles().light18(text: 'Enter OTP'),
+                KStyles().med18(text: 'Enter OTP'),
                 Gap(10.h),
                 PinWidget(
                   controller: loginCtrl.pinCtrl,
@@ -64,11 +64,11 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                   },
                 ),
                 Gap(10.h),
-                KStyles().light13(text: 'A 4 digit code has been sent to your Mobile Number'),
+                KStyles().med12(text: 'A 4 digit code has been sent to your Mobile Number'),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    KStyles().light16(
+                    KStyles().med16(
                       text: '  +91 ${loginCtrl.phoneCtrl.text}',
                       color: kBlack.withOpacity(0.5),
                     ),
@@ -88,7 +88,7 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                         },
                         child: KStyles().med14(text: 'Resend OTP',color: kBlue))
                     : Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [  KStyles().light14(text: 'Resend OTP in '),KStyles().light14(text:'${loginCtrl.start} seconds',color: kRed)],)
+                      children: [  KStyles().med14(text: 'Resend OTP in '),KStyles().med14(text:'${loginCtrl.start} seconds',color: kRed)],)
                    ,
               ],
             ),

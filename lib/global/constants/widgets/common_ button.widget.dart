@@ -21,7 +21,7 @@ class CommonButtonWidget extends StatelessWidget {
           backgroundColor: color,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.r))
         ),
-          onPressed: onPressed, child: Center(child: KStyles().light18(text:text,color: kWhite ))
+          onPressed: onPressed, child: Center(child: KStyles().med18(text:text,color: kWhite ))
         ),
       ),
     );

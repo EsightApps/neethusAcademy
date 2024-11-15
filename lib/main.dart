@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:neethusacademy/firebase_options.dart';
 import 'package:neethusacademy/global/config/databox.dart';
-import 'package:neethusacademy/global/constants/location/location_service.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +28,6 @@ void main()async {
   Directory document = await getApplicationDocumentsDirectory();
   Hive.init(document.path);
  userSavedBox =  await Hive.openBox<String>(Config.dbName);
- LocationService().requestLocationAndFetchDetails();
   runApp( MultiProvider(providers: providerList,
     child: const MyApp()));
 }

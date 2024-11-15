@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Consumer<LoginController>(
       builder: (context, loginCtrl, _) {
-        return Scaffold(resizeToAvoidBottomInset: false,
+        return Scaffold(
           backgroundColor: kWhite,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 200.h,
                   ),
                 ),
-                KStyles().light18(text: 'Login'),
+                KStyles().med18(text: 'Login'),
                 Gap(10.h),
                 PhoneTextField(
                   controller: loginCtrl.phoneCtrl,
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 Gap(7.h),
-                KStyles().light13(
+                KStyles().med13(
                   text: 'Please enter your mobile number to continue.',
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
 
 class KStyles {
@@ -8,9 +9,8 @@ class KStyles {
     return Text(
       text,
       style:
-      TextStyle(
+   GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -20,9 +20,9 @@ class KStyles {
   Text thin11({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -32,9 +32,9 @@ class KStyles {
   Text thin12({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -44,9 +44,9 @@ class KStyles {
   Text thin13({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 13.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -56,9 +56,9 @@ class KStyles {
   Text thin14({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -75,10 +75,10 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           letterSpacing: letterSpacing,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -93,9 +93,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -105,9 +105,9 @@ class KStyles {
   Text thin17({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -117,9 +117,9 @@ class KStyles {
   Text thin18({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 18.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -129,9 +129,9 @@ class KStyles {
   Text thin19({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 19.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -141,9 +141,9 @@ class KStyles {
   Text thin20({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -153,9 +153,9 @@ class KStyles {
   Text thin21({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -165,9 +165,9 @@ class KStyles {
   Text thin22({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -177,9 +177,9 @@ class KStyles {
   Text thin23({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -189,9 +189,9 @@ class KStyles {
   Text thin24({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -201,9 +201,9 @@ class KStyles {
   Text thin25({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -213,9 +213,9 @@ class KStyles {
   Text thin26({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -225,9 +225,9 @@ class KStyles {
   Text thin27({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -237,9 +237,9 @@ class KStyles {
   Text thin28({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -249,9 +249,9 @@ class KStyles {
   Text thin29({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -261,9 +261,9 @@ class KStyles {
   Text thin30({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w100),
@@ -274,9 +274,9 @@ class KStyles {
   Text light10({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -286,9 +286,9 @@ class KStyles {
   Text light11({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -298,9 +298,9 @@ class KStyles {
   Text light12({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -310,9 +310,9 @@ class KStyles {
   Text light13({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 13.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -322,9 +322,9 @@ class KStyles {
   Text light14({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -341,10 +341,10 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           letterSpacing: letterSpacing,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -359,9 +359,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -371,9 +371,9 @@ class KStyles {
   Text light17({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -383,9 +383,9 @@ class KStyles {
   Text light18({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 18.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -395,9 +395,9 @@ class KStyles {
   Text light19({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 19.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -407,10 +407,10 @@ class KStyles {
   Text light20({required String text, Color color = Colors.black, double? height,TextDecoration? textDecoration}) {
     return Text(
       text,
-      style: TextStyle(decoration: textDecoration,
+      style:GoogleFonts.openSans(decoration: textDecoration,
       decorationColor: kWhite,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -420,9 +420,9 @@ class KStyles {
   Text light21({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -432,9 +432,9 @@ class KStyles {
   Text light22({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -444,9 +444,9 @@ class KStyles {
   Text light23({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -456,9 +456,9 @@ class KStyles {
   Text light24({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -468,9 +468,9 @@ class KStyles {
   Text light25({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -480,9 +480,9 @@ class KStyles {
   Text light26({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -492,9 +492,9 @@ class KStyles {
   Text light27({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -504,9 +504,9 @@ class KStyles {
   Text light28({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -516,9 +516,9 @@ class KStyles {
   Text light29({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -528,9 +528,9 @@ class KStyles {
   Text light30({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w300),
@@ -545,9 +545,9 @@ class KStyles {
       double? letterSpacing}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 9.sp,
           letterSpacing: letterSpacing,
           color: color,
@@ -558,9 +558,9 @@ class KStyles {
   Text reg10({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -570,9 +570,9 @@ class KStyles {
   Text reg11({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -587,9 +587,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -607,9 +607,9 @@ class KStyles {
       maxLines: maxLines,
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           letterSpacing: letterSpacing,
           fontSize: 13.sp,
           color: color,
@@ -626,9 +626,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           letterSpacing: letterSpacing,
           color: color,
@@ -645,10 +645,10 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           letterSpacing: letterSpacing,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -663,9 +663,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -675,9 +675,9 @@ class KStyles {
   Text reg17({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -687,9 +687,9 @@ class KStyles {
   Text reg18({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 18.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -699,9 +699,9 @@ class KStyles {
   Text reg19({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 19.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -711,9 +711,9 @@ class KStyles {
   Text reg20({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -723,9 +723,9 @@ class KStyles {
   Text reg21({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -735,9 +735,9 @@ class KStyles {
   Text reg22({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -747,9 +747,9 @@ class KStyles {
   Text reg23({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -765,9 +765,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -777,9 +777,9 @@ class KStyles {
   Text reg25({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -789,9 +789,9 @@ class KStyles {
   Text reg26({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 26.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -801,9 +801,9 @@ class KStyles {
   Text reg27({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 27.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -813,9 +813,9 @@ class KStyles {
   Text reg28({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 28.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -825,9 +825,9 @@ class KStyles {
   Text reg29({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 29.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -837,9 +837,9 @@ class KStyles {
   Text reg30({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 30.sp,
           color: color,
           fontWeight: FontWeight.w400),
@@ -850,9 +850,9 @@ class KStyles {
   Text med10({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -862,9 +862,9 @@ class KStyles {
   Text med11({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -874,9 +874,9 @@ class KStyles {
   Text med12({required String text, Color color = Colors.black, double? height,TextAlign ?textAlign}) {
     return Text(
       text,textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -886,9 +886,9 @@ class KStyles {
   Text med13({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 13.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -898,9 +898,9 @@ class KStyles {
   Text med14({required String text, Color color = Colors.black, double? height,TextAlign ?textAlign}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -910,9 +910,9 @@ class KStyles {
   Text med15({required String text, Color color = Colors.black, double? height,TextAlign ? textAlign}) {
     return Text(
       text,textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -922,9 +922,9 @@ class KStyles {
   Text med16({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -934,9 +934,9 @@ class KStyles {
   Text med17({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -946,9 +946,9 @@ class KStyles {
   Text med18({required String text, Color color = Colors.black, double? height,}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 18.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -958,9 +958,9 @@ class KStyles {
   Text med19({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 19.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -970,9 +970,9 @@ class KStyles {
   Text med20({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -982,9 +982,9 @@ class KStyles {
   Text med21({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -994,9 +994,9 @@ class KStyles {
   Text med22({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1006,9 +1006,9 @@ class KStyles {
   Text med23({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1018,9 +1018,9 @@ class KStyles {
   Text med24({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1030,9 +1030,9 @@ class KStyles {
   Text med25({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1042,9 +1042,9 @@ class KStyles {
   Text med26({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 26.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1054,9 +1054,9 @@ class KStyles {
   Text med27({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 27.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1066,9 +1066,9 @@ class KStyles {
   Text med28({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 28.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1078,9 +1078,9 @@ class KStyles {
   Text med29({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 29.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1090,9 +1090,9 @@ class KStyles {
   Text med30({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 30.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1102,9 +1102,9 @@ class KStyles {
   Text med({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w500),
@@ -1116,9 +1116,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1129,9 +1129,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1142,9 +1142,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1155,9 +1155,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 13.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1168,9 +1168,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1181,9 +1181,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1194,9 +1194,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1207,9 +1207,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1224,9 +1224,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 18.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1237,9 +1237,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 19.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1250,9 +1250,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 20.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1263,9 +1263,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1276,9 +1276,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(decoration: TextDecoration.underline,
+      style:GoogleFonts.openSans(decoration: TextDecoration.underline,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1289,9 +1289,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1302,9 +1302,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1315,9 +1315,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1328,9 +1328,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 26.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1341,9 +1341,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 27.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1354,9 +1354,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 28.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1367,9 +1367,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 29.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1380,9 +1380,9 @@ class KStyles {
       {required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 30.sp,
           color: color,
           fontWeight: FontWeight.w600),
@@ -1398,9 +1398,9 @@ class KStyles {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 10.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1410,9 +1410,9 @@ class KStyles {
   Text bold11({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1422,9 +1422,9 @@ class KStyles {
   Text bold12({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 12.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1434,9 +1434,9 @@ class KStyles {
   Text bold13({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 13.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1446,9 +1446,9 @@ class KStyles {
   Text bold14({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 14.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1459,11 +1459,10 @@ class KStyles {
     required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style: GoogleFonts.openSans(
          decoration: textDecoration,
         decorationColor: kWhite,
           height: height,
-          fontFamily: 'ClashDisplay',
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1475,11 +1474,11 @@ class KStyles {
     return Text(
 
       text,textAlign: textAlign,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
          decoration: textDecoration,
         decorationColor: kWhite,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 16.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1489,10 +1488,10 @@ class KStyles {
   Text bold17({required String text, Color color = Colors.black, double? height,TextDecoration ?  textDecoration}) {
     return Text(
       text,
-      style: TextStyle(decoration: textDecoration,
+      style:GoogleFonts.openSans(decoration: textDecoration,
       decorationColor: kWhite,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 17.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1502,7 +1501,7 @@ class KStyles {
   Text bold18({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
          
           fontSize: 18.sp,
@@ -1514,7 +1513,7 @@ class KStyles {
   Text bold19({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
          
           fontSize: 19.sp,
@@ -1526,7 +1525,7 @@ class KStyles {
   Text bold20({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
        
           fontSize: 20.sp,
@@ -1538,10 +1537,10 @@ class KStyles {
   Text bold21({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
         
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 21.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1551,11 +1550,11 @@ class KStyles {
   Text bold22({required String text, Color color = Colors.black, double? height,TextDecoration? textDecoration}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
         decoration: textDecoration,
         decorationColor: kWhite,
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 22.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1565,9 +1564,9 @@ class KStyles {
   Text bold23({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 23.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1577,9 +1576,9 @@ class KStyles {
   Text bold24({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 24.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1589,9 +1588,9 @@ class KStyles {
   Text bold25({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 25.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1601,9 +1600,9 @@ class KStyles {
   Text bold26({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 26.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1613,9 +1612,9 @@ class KStyles {
   Text bold27({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 27.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1625,9 +1624,9 @@ class KStyles {
   Text bold28({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 28.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1637,9 +1636,9 @@ class KStyles {
   Text bold29({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 29.sp,
           color: color,
           fontWeight: FontWeight.w700),
@@ -1649,9 +1648,9 @@ class KStyles {
   Text bold30({required String text, Color color = Colors.black, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style:GoogleFonts.openSans(
           height: height,
-          fontFamily: 'ClashDisplay',
+       
           fontSize: 30.sp,
           color: color,
           fontWeight: FontWeight.w700),

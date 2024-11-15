@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import '../styles/colors.dart';
 import 'package:sms_autofill/sms_autofill.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 
 class PinWidget extends StatefulWidget {
   const PinWidget({
@@ -24,21 +26,36 @@ class _PinWidgetState extends State<PinWidget> with CodeAutoFill {
   @override
   void initState() {
     super.initState();
-    listenForCode(); // Start listening for SMS code when widget is initialized
+    
+    // Request SMS permission at the start
+    _requestSmsPermission();
+  }
+
+  // Function to request SMS permission
+  Future<void> _requestSmsPermission() async {
+    PermissionStatus status = await Permission.sms.request();
+
+    if (status.isGranted) {
+      // If permission is granted, start listening for OTP code
+      SmsAutoFill().listenForCode();
+    } else {
+      // Handle permission denial if needed
+      print("SMS permission denied");
+    }
   }
 
   @override
   void codeUpdated() {
-    // This method is called automatically when the OTP is received
+    // This method is called when OTP is received
     setState(() {
-      widget.controller.text = code ?? '';  // Update controller with the received OTP
+      widget.controller.text = code ?? '';  // Update the controller with received OTP
     });
     widget.onChanged(code.toString());  // Notify parent widget of the code change
   }
 
   @override
   void dispose() {
-    SmsAutoFill().unregisterListener(); // Stop listening for OTP
+    SmsAutoFill().unregisterListener(); // Stop listening for OTP when widget is disposed
     super.dispose();
   }
 
