@@ -18,10 +18,12 @@ final Function()onPressed;
     actions: [
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CommonButtonWidget(onPressed: (){
+          CommonButtonWidget(isLoading: false,icon: false,
+            onPressed: (){
             Navigator.maybePop(context);
           }, text: 'Cancel', color: kBlue),
-           CommonButtonWidget(onPressed: onPressed, text: subtitle, color:  kBlue)
+           CommonButtonWidget(isLoading: false,icon: false,
+            onPressed: onPressed, text: subtitle, color:  kBlue)
         ],
       ),
      

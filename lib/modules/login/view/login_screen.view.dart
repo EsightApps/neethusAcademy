@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -23,29 +21,31 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   
   @override
   Widget build(BuildContext context) {
     return Consumer<LoginController>(
       builder: (context, loginCtrl, _) {
-        return Scaffold(
-          backgroundColor: kWhite,
+        return Scaffold(resizeToAvoidBottomInset: false,
+          backgroundColor: kLightBlue,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Gap(80.h),
+                Gap(70.h),
                 Center(
                   child: Lottie.asset(
                     login,
                     animate: true,
-                    width: 200.w,
-                    height: 200.h,
+                    width: 270.w,
+                    height: 270.h,
                   ),
                 ),
-                KStyles().med18(text: 'Login'),
-                Gap(10.h),
+                
+                KStyles().semiBold17(text: 'Login to your Account',color: kBlue),
+                Gap(20.h),
                 PhoneTextField(
                   controller: loginCtrl.phoneCtrl,
                   onChanged: (PhoneNumber number) {
@@ -61,14 +61,44 @@ class _LoginScreenState extends State<LoginScreen> {
                 KStyles().med13(
                   text: 'Please enter your mobile number to continue.',
                 ),
+                Gap(50.h),
+                // Padding(
+                //   padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                //   child: CommonButtonWidget(isLoading: loginCtrl.apiLoading,
+                //                 onPressed: () async {
+                //   if (loginCtrl.phoneCtrl.text.length == 10) {
+                //     loginCtrl.setLoginVal(0);
+                  
+                //     bool success = await loginCtrl.loginApi();
+                //     if (success) {
+                //       // Navigate to OTP screen if login is successful
+                //       Navigator.pushNamed(context, 'otp');
+                //     } else {
+                //       // Show toast for invalid phone number
+                //       Fluttertoast.showToast(
+                //         msg: 'Invalid PhoneNumber',
+                //         backgroundColor: kBlack,
+                //       );
+                //     }
+                //   }
+                //                 },
+                //                 text: 'Continue',
+                //                 color: loginCtrl.phoneCtrl.text.length == 10
+                //     ? kBlue
+                //     : const Color.fromARGB(255, 192, 195, 228),
+                //               ),
+                // ),
+
               ],
             ),
           ),
           floatingActionButton: Padding(
-            padding: EdgeInsets.only(bottom: 30.h, left: 20.w, right: 20.w),
-            child: CommonButtonWidget(
+            padding: EdgeInsets.only(bottom: 30.h, left: 30.w, right: 30.w),
+            child: CommonButtonWidget(isLoading: loginCtrl.apiLoading,icon: true,
               onPressed: () async {
                 if (loginCtrl.phoneCtrl.text.length == 10) {
+                  loginCtrl.setLoginVal(0);
+
                   bool success = await loginCtrl.loginApi();
                   if (success) {
                     // Navigate to OTP screen if login is successful
@@ -82,10 +112,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                 }
               },
-              text: 'Continue',
+              text: 'Continue ',
               color: loginCtrl.phoneCtrl.text.length == 10
-                  ? kBlue
-                  : const Color.fromARGB(255, 146, 147, 147),
+                  ? kDarkBlue
+                  : const Color.fromARGB(255, 192, 195, 228),
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

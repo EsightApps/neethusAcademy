@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:neethusacademy/firebase_options.dart';
 import 'package:neethusacademy/global/config/databox.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,20 +8,37 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:neethusacademy/global/constants/provider/providers.dart';
 import 'package:provider/provider.dart';
 import 'global/config/config.dart';
-import 'global/constants/pushnotification/push_notification.dart';
 import 'global/constants/routes/routes.dart';
 import 'global/constants/styles/colors.dart';
-import 'package:firebase_core/firebase_core.dart';
-
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  //   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  //*-- Firebase Notifications
-  if (Platform.isAndroid) {
-    await PushNotificationService().initialize();
-  }
+  // //*-- Firebase Notifications
+  // if (Platform.isAndroid) {
+  //   await PushNotificationService().initialize();
+  // }
+   OneSignal.initialize(
+    "3cf177ca-aefc-4b09-bb2b-c4ecb039c6f8",  
+  );
+  
+   
+    OneSignal.Notifications.requestPermission(true);
+
+   OneSignal.Notifications.addForegroundWillDisplayListener((OSNotificationWillDisplayEvent event){
+        print("Notification received in foreground: ${event.notification.body}");
+      event.notification;
+   });
+
+
+
+ 
+
+
+   
+
 
   //*--
   Directory document = await getApplicationDocumentsDirectory();

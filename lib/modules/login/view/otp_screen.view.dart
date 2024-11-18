@@ -46,20 +46,21 @@ class _OtpScreenViewState extends State<OtpScreenView> {
       builder: (context, loginCtrl, _) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: kWhite,
+          backgroundColor: kLightBlue,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Gap(80.h),
-                Center(child: Lottie.asset(login, animate: true, width: 200.w, height: 200.h)),
-                KStyles().med18(text: 'Enter OTP'),
+                Center(child: Lottie.asset(login, animate: true, width: 250.w, height: 250.h)),
+                KStyles().semiBold17(text: 'Enter OTP',color: kBlue),
                 Gap(10.h),
                 PinWidget(
                   controller: loginCtrl.pinCtrl,
                   focusNode: loginCtrl.pinFocus,
                   onChanged: (value) {
+                    loginCtrl.updatePin(value);
                     setState(() {});
                   },
                 ),
@@ -84,18 +85,19 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                loginCtrl.isResendEnabled
                     ? TextButton(
                         onPressed: () {
+                          loginCtrl.setLoginVal(1);
                          loginCtrl.resendOtp();
                         },
-                        child: KStyles().med14(text: 'Resend OTP',color: kBlue))
+                        child: KStyles().med16(text: 'Resend OTP',color: kBlue))
                     : Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [  KStyles().med14(text: 'Resend OTP in '),KStyles().med14(text:'${loginCtrl.start} seconds',color: kRed)],)
+                      children: [  KStyles().med15(text: 'Resend OTP in '),KStyles().med15(text:'${loginCtrl.start} seconds',color: kRed)],)
                    ,
               ],
             ),
           ),
           floatingActionButton: Padding(
-            padding: EdgeInsets.only(bottom: 30.h,left: 10.w,right: 10.w),
-            child: CommonButtonWidget(
+            padding: EdgeInsets.only(bottom: 30.h,left: 30.w,right: 30.w),
+            child: CommonButtonWidget(isLoading: false,icon: true,
               onPressed: () {
                 if (loginCtrl.pinCtrl.text == loginCtrl.otpVal && !loginCtrl.hasExpired) {
                   userSavedBox.put(DbKey().userSaved, loginCtrl.phoneNum);
@@ -107,7 +109,7 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                 }
               },
               text: 'Continue',
-              color: loginCtrl.pinCtrl.text.length == 4 ? kBlue : const Color.fromARGB(255, 146, 147, 147),
+              color: loginCtrl.pinCtrl.text.length == 4 ? kDarkBlue : const Color.fromARGB(255, 192, 195, 228),
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

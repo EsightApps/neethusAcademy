@@ -1,4 +1,4 @@
-String login = 'assets/lotties/login.json';
+String login = 'assets/lotties/lottie.json';
 String ielts = 'assets/images/ielts.png';
 String oet = 'assets/images/oet.png';
 String german = 'assets/images/german.png';
@@ -7,3 +7,4 @@ String osce = 'assets/images/osce.png';
 String cbt = 'assets/images/cbt.jpg';
 String logout = 'assets/images/logoff.png';
 String logo = 'assets/lotties/neethuslogo.gif';
+String course = 'assets/images/certified course.png';

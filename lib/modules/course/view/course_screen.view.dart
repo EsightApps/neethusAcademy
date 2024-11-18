@@ -9,7 +9,6 @@ import 'package:neethusacademy/modules/course/controller/course_controller.dart'
 import 'package:neethusacademy/modules/course/widget/alertbox.widget.dart';
 import 'package:neethusacademy/modules/course/widget/single_course.widget.dart';
 import 'package:provider/provider.dart';
-
 import '../../../global/constants/location/location_service.dart';
 import '../../home/view/home_screen.view.dart';
 
@@ -48,16 +47,20 @@ class _CourseScreenViewState extends State<CourseScreenView> {
             return exitApp ; 
           },
           child: Scaffold(
-            backgroundColor: kWhite,
+            backgroundColor: kLightBlue,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(70.h),
-              child: AppBar(
+              preferredSize: Size.fromHeight(60.h),
+              child: AppBar(title: KStyles().med19(text: 'Courses',color: Colors.white),
+              centerTitle: true,
                 backgroundColor: kBlue,
-                leadingWidth: 100.w,
-                leading: Image.asset(logo)
+                leadingWidth: 70.w,
+                leading: Padding(
+                  padding:  EdgeInsets.only(left: 10.w),
+                  child: Image.asset(logo),
+                )
                ,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(9.r),
                 ),
               ),
             ),
@@ -69,8 +72,15 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Gap(20.h),
-                    KStyles().med20(text: 'Choose Course'),
-                    Gap(10.h),
+                    Row(
+                      children: [
+                        KStyles().semiBold17(text: 'Choose Your ',color: kBlue),
+                        Image.asset(course,width:22.w,height: 22.h,),
+                         KStyles().semiBold17(text: ' Course',color: kBlue),
+                      ],
+                    ),
+                
+                    Gap(20.h),
                     GridView.builder(
                       itemCount: courseCtrl.courses.length,
                       shrinkWrap: true,
@@ -82,6 +92,7 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                       ),
                       itemBuilder: (BuildContext context, index) {
                         return CourseWidgetCard(
+                          colors: courseCtrl.courseColors[index],
                           onPressed: () {
                             courseCtrl.setSelectedUrl(courseCtrl.courseUrls[index]);
                             Navigator.push(
