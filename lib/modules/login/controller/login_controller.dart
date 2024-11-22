@@ -17,11 +17,11 @@ class LoginController extends ChangeNotifier{
    int start = 30;
   bool isResendEnabled = false;
   bool hasExpired = false; 
-late  Timer timer;
+  late  Timer timer;
 
-  void startTimer() {
+   startTimer() {
     start = 30;
-    hasExpired = false; // Reset expiration flag
+    hasExpired = false; 
     isResendEnabled = false;
     notifyListeners();
 
@@ -35,11 +35,12 @@ late  Timer timer;
       isResendEnabled = true;
       }
       notifyListeners();
-    });
+  });
   }
 
    resendOtp() {
     loginApi();
+   
     startTimer(); 
   }
 
