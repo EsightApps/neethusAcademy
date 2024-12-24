@@ -1,71 +1,75 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:provider/provider.dart';
+import 'package:neethusacademy/global/constants/styles/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../course/controller/course_controller.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String url;
+  const HomeScreen({super.key, required this.url});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late InAppWebViewController webViewController;
+  double progress = 0.0;
+
   @override
   Widget build(BuildContext context) {
-    return Consumer<CourseController>(
-      builder: (context, courseCtrl, _) {
-        return Scaffold(
-          body: Column(
+    return WillPopScope(
+      onWillPop: () async {
+        // Ensure back navigation works correctly in the WebView
+        if (await webViewController.canGoBack()) {
+          // Go back in the WebView history
+          await webViewController.goBack();
+          return false; // Prevent the default back button action (closing the app)
+        }
+        return true; // Allow the default back button action (close the app)
+      },
+      child: Scaffold(
+        backgroundColor: kBlue, // Avoid duplicate background stacking
+        body: SafeArea(
+          child: Column(
             children: [
-              // Place LinearProgressIndicator at the top
-              courseCtrl.progress < 1
-                  ? LinearProgressIndicator(value: courseCtrl.progress)
-                  : const SizedBox.shrink(),
-
-              // WebView below the progress indicator
-              if (courseCtrl.selectedUrl != null)
-                Expanded(
-                  child: InAppWebView(
-                    onProgressChanged:
-                        (inAppWebViewController, int progress) {
-                      courseCtrl.setProgress(progress / 100.0);
-                    },
-                    onWebViewCreated: (inAppWebViewController) {
-                      courseCtrl.setWebViewController(inAppWebViewController);
-                    },
-                    initialUrlRequest: URLRequest(
-                      url: WebUri.uri(Uri.parse(courseCtrl.selectedUrl.toString())),
-                    ),
-                    shouldOverrideUrlLoading:
-                        (inAppWebViewController, navigationAction) async {
-                      var url = navigationAction.request.url.toString();
-
-                      // Check if the URL is a phone number or WhatsApp link
-                      if (url.startsWith("tel:")) {
-                        // Handle phone number link
-                        await launchUrl(Uri.parse(url)); // Opens the dialer
-                        return NavigationActionPolicy.CANCEL;
-                      } else if (url.startsWith("whatsapp://")) {
-                        // Handle WhatsApp link
-                        await launchUrl(Uri.parse(url)); // Opens WhatsApp
-                        return NavigationActionPolicy.CANCEL;
-                      } 
-                      return NavigationActionPolicy.ALLOW; // Allow other links to load
-                    },
-                    onLoadError: (inAppWebViewController, url, code, message) {
-                     log("Error loading page: $message");
-                    },
+              if (progress < 1) LinearProgressIndicator(value: progress),
+              Expanded(
+                child: InAppWebView(
+                  initialUrlRequest: URLRequest(
+                    url: WebUri(widget.url),
                   ),
+                  onWebViewCreated: (controller) {
+                    webViewController = controller;
+                  },
+                  onProgressChanged: (controller, int progressValue) {
+                    // Update progress state for the linear indicator
+                    setState(() {
+                      progress = progressValue / 100.0;
+                    });
+                  },
+                  shouldOverrideUrlLoading: (controller, navigationAction) async {
+                    // Handle special URL schemes like tel: and mailto:
+                    var url = navigationAction.request.url.toString();
+                    if (url.startsWith("tel:") || url.startsWith("mailto:")) {
+                      await launchUrl(Uri.parse(url));
+                      return NavigationActionPolicy.CANCEL;
+                    }
+                    // Check if the URL is one of the course-specific links
+                    // Here you can adjust based on the URL or deep link condition that was causing the course screen transition.
+                    if (url.contains("course")) {
+                      // Handle course link navigation here if needed (for instance, show a different screen or route)
+                      return NavigationActionPolicy.CANCEL; // Prevent unwanted navigation
+                    }
+                    return NavigationActionPolicy.ALLOW;
+                  },
                 ),
+              ),
             ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

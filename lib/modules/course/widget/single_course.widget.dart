@@ -18,14 +18,21 @@ class CourseWidgetCard extends StatelessWidget {
     return GestureDetector(
       onTap:onPressed ,
       child: Container(height: 30.h,
-        decoration: BoxDecoration(color: colors,
-          border: Border.all(color: kBorderGrey),
+        decoration: BoxDecoration(color: kWhite,
+       
+        border: Border.all(color: kBorderGrey,width: 0.4),
           borderRadius: BorderRadius.circular(10.r)),
         padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 5.h),
         child: Row(
           children: [
-            Image.asset(courseImage,width: 50.w,height: 50.h,),
-            Gap(3.w),
+            Container(width: 40.w,height: 40.h,
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage(courseImage),fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(5.r),
+              
+            ),
+              ),
+            Gap(6.w),
             KStyles().med15(text: courseName)
       
           ],

@@ -10,35 +10,11 @@ import 'package:provider/provider.dart';
 import 'global/config/config.dart';
 import 'global/constants/routes/routes.dart';
 import 'global/constants/styles/colors.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
+
+
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-  //   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  // //*-- Firebase Notifications
-  // if (Platform.isAndroid) {
-  //   await PushNotificationService().initialize();
-  // }
-   OneSignal.initialize(
-    "3cf177ca-aefc-4b09-bb2b-c4ecb039c6f8",  
-  );
-  
-   
-    OneSignal.Notifications.requestPermission(true);
-
-   OneSignal.Notifications.addForegroundWillDisplayListener((OSNotificationWillDisplayEvent event){
-        print("Notification received in foreground: ${event.notification.body}");
-      event.notification;
-   });
-
-
-
- 
-
-
-   
-
 
   //*--
   Directory document = await getApplicationDocumentsDirectory();

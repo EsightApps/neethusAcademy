@@ -29,7 +29,7 @@ class _CourseScreenViewState extends State<CourseScreenView> {
   Widget build(BuildContext context) {
     return Consumer<CourseController>(
       builder: (context, courseCtrl, _) {
-        return WillPopScope(
+        return WillPopScope.new(
           onWillPop: () async {
             bool exitApp = await showDialog(
               context: context,
@@ -47,20 +47,15 @@ class _CourseScreenViewState extends State<CourseScreenView> {
             return exitApp ; 
           },
           child: Scaffold(
-            backgroundColor: kLightBlue,
+            backgroundColor: kWhite,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(60.h),
-              child: AppBar(title: KStyles().med19(text: 'Courses',color: Colors.white),
+              child: AppBar(title: Image.asset(logo),
               centerTitle: true,
-                backgroundColor: kBlue,
+                backgroundColor: kBlue.withOpacity(0.9),
                 leadingWidth: 70.w,
-                leading: Padding(
-                  padding:  EdgeInsets.only(left: 10.w),
-                  child: Image.asset(logo),
-                )
-               ,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(9.r),
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
               ),
             ),
@@ -72,13 +67,10 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Gap(20.h),
-                    Row(
-                      children: [
-                        KStyles().semiBold17(text: 'Choose Your ',color: kBlue),
-                        Image.asset(course,width:22.w,height: 22.h,),
-                         KStyles().semiBold17(text: ' Course',color: kBlue),
-                      ],
-                    ),
+                   
+                        KStyles().semiBold17(text: 'Choose Course ',color: kBlue),
+                       
+                   
                 
                     Gap(20.h),
                     GridView.builder(
@@ -94,11 +86,11 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                         return CourseWidgetCard(
                           colors: courseCtrl.courseColors[index],
                           onPressed: () {
-                            courseCtrl.setSelectedUrl(courseCtrl.courseUrls[index]);
+                          
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
+                                builder: (context) =>  HomeScreen(url:'https://esightsolutions.in/neethusapp/demo2/'),
                               ),
                             );
                           },

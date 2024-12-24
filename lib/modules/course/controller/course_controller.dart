@@ -29,8 +29,8 @@ class CourseController extends ChangeNotifier {
     notifyListeners();
   }
 
- setSelectedUrl(String url) {
-    _selectedUrl = url;
+ setSelectedUrl() {
+   _selectedUrl = 'https://esightsolutions.in/neethusapp/demo2/';
     notifyListeners();
   }
 

@@ -1,15 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
-
 import 'package:neethusacademy/global/constants/images/images.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/global/constants/styles/text_styles.dart';
 
 import '../../../global/config/databox.dart';
 import '../../../global/config/db_key.dart';
-
 
 
 
@@ -35,7 +31,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
         return false;
       });
       
-    });
+   } );
   }
   @override
   Widget build(BuildContext context) {
@@ -43,13 +39,10 @@ class _SplashScreenViewState extends State<SplashScreenView> {
     body: Column(crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(child: Container(width: 80.w,height: 50.h,color: kWhite,
-        padding: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
-          child: Image.asset(logo,width: 100.w,))),
-       Gap(10.h),
-         Center(
-          child: KStyles().semiBold20(text: "Neethu's Accademy",color:kWhite),
-         )
+      
+        Center(child: Image.asset(logo,width: 300.w,)),
+      
+       
      
       
       ],

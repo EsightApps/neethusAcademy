@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:lottie/lottie.dart';
 import 'package:neethusacademy/global/constants/images/images.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
 import 'package:neethusacademy/global/constants/styles/text_styles.dart';
@@ -28,23 +27,21 @@ class _LoginScreenState extends State<LoginScreen> {
     return Consumer<LoginController>(
       builder: (context, loginCtrl, _) {
         return Scaffold(resizeToAvoidBottomInset: false,
-          backgroundColor: kLightBlue,
+          backgroundColor: kWhite,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Gap(70.h),
+                Gap(80.h),
                 Center(
-                  child: Lottie.asset(
+                  child:Image.asset(
                     login,
-                    animate: true,
-                    width: 270.w,
-                    height: 270.h,
+                   
                   ),
                 ),
                 
-                KStyles().semiBold17(text: 'Login to your Account',color: kBlue),
+                KStyles().semiBold17(text: 'Login',color: kBlue),
                 Gap(20.h),
                 PhoneTextField(
                   controller: loginCtrl.phoneCtrl,
@@ -58,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 Gap(7.h),
-                KStyles().med13(
+                KStyles().med12(
                   text: 'Please enter your mobile number to continue.',
                 ),
                 Gap(50.h),
@@ -114,8 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               text: 'Continue ',
               color: loginCtrl.phoneCtrl.text.length == 10
-                  ? kDarkBlue
-                  : const Color.fromARGB(255, 192, 195, 228),
+                  ? kBlue
+                  : kBorderGrey,
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

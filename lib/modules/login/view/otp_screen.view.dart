@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
-import 'package:lottie/lottie.dart';
 import 'package:neethusacademy/global/config/databox.dart';
 import 'package:neethusacademy/global/config/db_key.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
@@ -46,15 +45,15 @@ class _OtpScreenViewState extends State<OtpScreenView> {
       builder: (context, loginCtrl, _) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: kLightBlue,
+          backgroundColor: kWhite,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Gap(80.h),
-                Center(child: Lottie.asset(login, animate: true, width: 250.w, height: 250.h)),
-                KStyles().semiBold17(text: 'Enter OTP',color: kBlue),
+                Center(child: Image.asset(login,)),
+                KStyles().semiBold19(text: 'Enter OTP',color: kBlue),
                 Gap(10.h),
                 PinWidget(
                   controller: loginCtrl.pinCtrl,
@@ -66,24 +65,29 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                 ),
                 Gap(10.h),
                 KStyles().med12(text: 'A 4 digit code has been sent to your Mobile Number'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    KStyles().med16(
-                      text: '  +91 ${loginCtrl.phoneCtrl.text}',
-                      color: kBlack.withOpacity(0.5),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'login');
-                      },
-                      icon: Icon(Icons.edit, color: kBlack.withOpacity(0.5), size: 17.sp),
-                    )
-                  ],
+                  Gap(10.h),
+                SizedBox(height: 25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      KStyles().med16(
+                        text: '  +91 ${loginCtrl.phoneCtrl.text}',
+                        color: kBorderGrey,
+                      ),
+                      IconButton(padding: EdgeInsets.zero,alignment: Alignment.topCenter,
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'login');
+                        },
+                        icon: Icon(Icons.edit_outlined, color: kBorderGrey, size: 17.sp),
+                      )
+                    ],
+                  ),
                 ),
-                Gap(10.h),
+                  Gap(7.h),
+                
                loginCtrl.isResendEnabled
-                    ? TextButton(
+                    ? TextButton(iconAlignment: IconAlignment.start,
                         onPressed: () {
                           loginCtrl.setLoginVal(1);
                          loginCtrl.resendOtp();
@@ -109,7 +113,7 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                 }
               },
               text: 'Continue',
-              color: loginCtrl.pinCtrl.text.length == 4 ? kDarkBlue : const Color.fromARGB(255, 192, 195, 228),
+              color: loginCtrl.pinCtrl.text.length == 4 ? kBlue : kBorderGrey,
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
