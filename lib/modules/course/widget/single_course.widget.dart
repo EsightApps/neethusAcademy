@@ -7,10 +7,10 @@ import 'package:neethusacademy/global/constants/styles/colors.dart';
 import 'package:neethusacademy/global/constants/styles/text_styles.dart';
 
 class CourseWidgetCard extends StatelessWidget {
-  const CourseWidgetCard({super.key,required this.courseName,required this.courseImage,required this.onPressed,required this.colors});
+  const CourseWidgetCard({super.key,required this.courseName,required this.courseImage,required this.onPressed});
  final  String courseName;
   final String courseImage;
-  final Color colors;
+
   final Function() onPressed;
 
   @override
@@ -22,7 +22,7 @@ class CourseWidgetCard extends StatelessWidget {
        
         border: Border.all(color: kBorderGrey,width: 0.4),
           borderRadius: BorderRadius.circular(10.r)),
-        padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 5.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 4.h),
         child: Row(
           children: [
             Container(width: 40.w,height: 40.h,

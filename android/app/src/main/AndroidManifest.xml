@@ -16,7 +16,7 @@
 
 
     <application
-        android:label="neethusacademy"
+        android:label="NeethusApp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

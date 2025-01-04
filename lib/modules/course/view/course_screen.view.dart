@@ -5,12 +5,13 @@ import 'package:gap/gap.dart';
 import 'package:neethusacademy/global/constants/images/images.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
 import 'package:neethusacademy/global/constants/styles/text_styles.dart';
-import 'package:neethusacademy/modules/course/controller/course_controller.dart';
 import 'package:neethusacademy/modules/course/widget/alertbox.widget.dart';
 import 'package:neethusacademy/modules/course/widget/single_course.widget.dart';
-import 'package:provider/provider.dart';
+import '../../../global/config/databox.dart';
 import '../../../global/constants/location/location_service.dart';
 import '../../home/view/home_screen.view.dart';
+
+
 
 class CourseScreenView extends StatefulWidget {
   const CourseScreenView({super.key});
@@ -25,10 +26,11 @@ class _CourseScreenViewState extends State<CourseScreenView> {
     super.initState();
      LocationService().requestLocationAndFetchDetails();
   }
+   List courses = ['OET','IELTS','NCLEX-RN','GERMAN','CBT','OSCE','TOEFL'];
+  List courseImages = [oet,ielts,nclex,german,cbt,osce,toefl];
   @override
   Widget build(BuildContext context) {
-    return Consumer<CourseController>(
-      builder: (context, courseCtrl, _) {
+    
         return WillPopScope.new(
           onWillPop: () async {
             bool exitApp = await showDialog(
@@ -74,7 +76,7 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                 
                     Gap(20.h),
                     GridView.builder(
-                      itemCount: courseCtrl.courses.length,
+                      itemCount: courses.length,
                       shrinkWrap: true,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
@@ -84,18 +86,20 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                       ),
                       itemBuilder: (BuildContext context, index) {
                         return CourseWidgetCard(
-                          colors: courseCtrl.courseColors[index],
                           onPressed: () {
-                          
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>  HomeScreen(url:'https://esightsolutions.in/neethusapp/demo2/'),
-                              ),
+                                builder: (context) =>  HomeScreen(url:'https://esightsolutions.in/neethusapp/demo2/?course=${courses[index]}'),
+                              ),(routes){
+                                return false;
+                              }
+                            
                             );
+                              userSavedBox.put('course', courses[index]);
                           },
-                          courseImage: courseCtrl.courseImages[index],
-                          courseName: courseCtrl.courses[index],
+                          courseImage: courseImages[index],
+                          courseName: courses[index],
                         );
                       },
                     ),
@@ -105,7 +109,6 @@ class _CourseScreenViewState extends State<CourseScreenView> {
             ),
           ),
         );
-      },
-    );
+     
   }
 }

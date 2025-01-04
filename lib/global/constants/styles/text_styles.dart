@@ -859,12 +859,12 @@ class KStyles {
     );
   }
 
-  Text med11({required String text, Color color = Colors.black, double? height}) {
+  Text med11({required String text, Color color = Colors.black, double? height,TextDecoration ? textDecoration}) {
     return Text(
       text,
       style:GoogleFonts.manrope(
           height: height,
-       
+           decoration: textDecoration,
           fontSize: 11.sp,
           color: color,
           fontWeight: FontWeight.w500),

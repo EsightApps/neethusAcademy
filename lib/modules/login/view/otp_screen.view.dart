@@ -35,10 +35,6 @@ class _OtpScreenViewState extends State<OtpScreenView> {
     
   }
 
-  
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Consumer<LoginController>(
@@ -66,25 +62,27 @@ class _OtpScreenViewState extends State<OtpScreenView> {
                 Gap(10.h),
                 KStyles().med12(text: 'A 4 digit code has been sent to your Mobile Number'),
                   Gap(10.h),
-                SizedBox(height: 25,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      KStyles().med16(
-                        text: '  +91 ${loginCtrl.phoneCtrl.text}',
-                        color: kBorderGrey,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    KStyles().med16(
+                      text: '  +91 ${loginCtrl.phoneCtrl.text} ',
+                      color: kBorderGrey,
+                    ),
+                 InkWell(radius: 30.r,
+                 borderRadius: BorderRadius.circular(10.r),
+                      onTap: () {
+                        Navigator.pushNamed(context, 'login');
+                      },
+                      child: Padding(
+                        padding:  EdgeInsets.only(top: 4.h),
+                        child: Icon(Icons.edit_outlined, color: kGrey, size: 17.sp),
                       ),
-                      IconButton(padding: EdgeInsets.zero,alignment: Alignment.topCenter,
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'login');
-                        },
-                        icon: Icon(Icons.edit_outlined, color: kBorderGrey, size: 17.sp),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-                  Gap(7.h),
+                  Gap(5.h),
                 
                loginCtrl.isResendEnabled
                     ? TextButton(iconAlignment: IconAlignment.start,
@@ -109,7 +107,8 @@ class _OtpScreenViewState extends State<OtpScreenView> {
 
                Navigator.pushNamedAndRemoveUntil(context, 'course', (routes) => false);
                 } else {
-                  Fluttertoast.showToast(msg: 'Incorrect OTP', backgroundColor: kBlack);
+                  Fluttertoast.showToast(toastLength: Toast.LENGTH_SHORT,
+                    msg: 'Incorrect OTP', backgroundColor: kBlack,gravity: ToastGravity.TOP);
                 }
               },
               text: 'Continue',

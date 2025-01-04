@@ -1,6 +1,8 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
+
     {
       "name": "Flutter: Attach to Device",
       "type": "dart",
@@ -14,6 +16,12 @@
     {
       "name": "neethusacademy (Dart Web)",
       "program": "web",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "neethusacademy (Flutter)",
+      "program": "lib/main.dart",
       "request": "launch",
       "type": "dart"
     }

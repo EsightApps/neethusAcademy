@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         ? ScreenUtilInit(
             designSize: const Size(333, 675),
             child: CupertinoApp(
-                title: "Neethu's Academy",
+                title: "Neethu's App",
                 routes:  routes,
                 initialRoute: '/',
                 theme: const CupertinoThemeData(
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
             designSize: const Size(333, 675),
             child: MaterialApp(
                 routes: routes,
-               title: "Neethu's Academy",
+               title: "Neethu's App",
                 initialRoute: '/',
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData.light().copyWith(

@@ -1,4 +1,4 @@
-package com.example.neethusacademy
+package com.example.NeethusApp
 
 import io.flutter.embedding.android.FlutterActivity
 

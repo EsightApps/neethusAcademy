@@ -8,3 +8,4 @@ String cbt = 'assets/images/cbt.webp';
 String logout = 'assets/images/logoff.webp';
 String logo = 'assets/lotties/neethuslogo.gif';
 String course = 'assets/images/certified course.webp';
+String toefl = 'assets/images/toefl.webp';

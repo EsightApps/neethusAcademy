@@ -1,7 +1,7 @@
 import 'dart:developer';
-
 import 'package:permission_handler/permission_handler.dart';
 import 'package:geolocator/geolocator.dart';
+
 class LocationService {
 Future<void> requestLocationAndFetchDetails() async {
   // Step 1: Request location permission

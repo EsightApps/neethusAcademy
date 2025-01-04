@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +6,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
 import 'package:neethusacademy/modules/login/controller/login_controller.dart';
 import 'package:provider/provider.dart';
+
 // ignore: must_be_immutable
 class PhoneTextField extends StatelessWidget {
   PhoneTextField({

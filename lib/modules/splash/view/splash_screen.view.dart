@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neethusacademy/global/constants/images/images.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
-
 import '../../../global/config/databox.dart';
 import '../../../global/config/db_key.dart';
+import '../../home/view/home_screen.view.dart';
 
 
 
@@ -22,8 +22,20 @@ class _SplashScreenViewState extends State<SplashScreenView> {
     super.initState();
     Future.delayed(const Duration(seconds: 5),(){
       String ? token = userSavedBox.get(DbKey().userSaved);
+      String ? course = userSavedBox.get('course');
   
        token != null && token.isNotEmpty ?
+       course !=null && course.isNotEmpty  ?
+        Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>  HomeScreen(url:'https://esightsolutions.in/neethusapp/demo2/?course=${course}'),
+                              ),(routes){
+                                return false;
+                              }
+                            
+                            ) :
+
     Navigator.pushNamedAndRemoveUntil(context, 'course', (routes){
         return false;
       }) :
@@ -39,8 +51,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
     body: Column(crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.center,
       children: [
-      
-        Center(child: Image.asset(logo,width: 300.w,)),
+      Center(child: Image.asset(logo,width: 300.w,)),
       
        
      

@@ -7,7 +7,7 @@ import 'package:http/http.dart' as https;
 import 'package:neethusacademy/global/config/config.dart';
 
 
-// Box<String> userInfo = Hive.box<String>(Config.dbName);
+
 
 String baseUrl = Config().baseUrl;
 
@@ -15,13 +15,11 @@ String baseUrl = Config().baseUrl;
 
 enum HttpMethods { post, get, delete, patch, multipart,put }
 
-// final https = SecureHttpClient.build(Config().fingerPrint);
 final Connectivity _connectivity =
-    Connectivity(); //?--------------- (network connectivity)
+    Connectivity(); 
 
 Future<Response> httpApiCall({
-  /// This [API] method will call the API and give back the response
-  /// THis will check the network connectivity and return the network error screen if network not available
+  
 
   required HttpMethods tHttp,
   Object? body,
@@ -122,29 +120,14 @@ Future<Response> httpRequests(
   }
 }
 
-//?----------------------------------------------------------------- ( unAuthorized methods )
 
-// unAuthMethod(Response response) {
-// if (json.decode(response.body)['message'].toString() == '401000') {
-// navigationKey.currentState!.pushNamed('/verifyCid');
-// userInfo.delete(DbKey().tokenKey);
-// }
-// }
 
 //? ---------------------------------------------------------------- ( API resource logs )
 apiLogs(String errorCode, Response response) {
   try {
     log("------------------------------------------- ( $errorCode )");
     log(response.statusCode.toString(), name: "API status code");
-    // String statusCode = json.decode(response.body)["message"].toString();
-    // log(statusCode, name: "API status code");
-
-    // if (statusCode.isNotEmpty) {
-    // log(statusChecker(statusCode), name: "API response");
-    // Fluttertoast.showToast(
-    // msg:
-    // " (${response.statusCode.toString()} ${json.decode(response.body)["message"].toString()})");
-    // }
+   
     log(json.decode(response.body).toString(), name: "Error body");
 
     log("------------------------------------------- ( $errorCode )");

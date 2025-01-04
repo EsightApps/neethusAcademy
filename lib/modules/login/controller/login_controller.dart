@@ -8,6 +8,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
 
 import 'package:neethusacademy/modules/login/service/login_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginController extends ChangeNotifier{
   TextEditingController phoneCtrl = TextEditingController();
@@ -81,11 +82,19 @@ onPhoneNumberChanges(PhoneNumber number) {
   }
   else{
     val == 0 ? (apiLoading = false) : '';
-    Fluttertoast.showToast(msg: 'Something went wrong',backgroundColor: kBlack,textColor: kWhite);
+    Fluttertoast.showToast(msg: 'Something went wrong',backgroundColor: kBlack,textColor: kWhite,gravity: ToastGravity.TOP);
     notifyListeners();
     log('failure');
    return false;
   }
   
+  }
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      // Show an error message if the URL can't be launched
+      throw 'Could not launch $url';
+    }
   }
 }

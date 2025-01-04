@@ -8,7 +8,7 @@
 PRODUCT_NAME = neethusacademy
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.neethusacademy
+PRODUCT_BUNDLE_IDENTIFIER = com.example.NeethusApp
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2024 com.example. All rights reserved.
