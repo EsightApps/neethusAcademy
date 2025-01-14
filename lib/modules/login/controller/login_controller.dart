@@ -1,21 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
-
 import 'package:neethusacademy/modules/login/service/login_service.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class LoginController extends ChangeNotifier{
   TextEditingController phoneCtrl = TextEditingController();
   TextEditingController pinCtrl = TextEditingController();
   ValueNotifier<Color> buttonColor = ValueNotifier<Color>(const Color.fromARGB(255, 146, 147, 147));
   FocusNode pinFocus = FocusNode();
-   int start = 30;
+  int start = 30;
   bool isResendEnabled = false;
   bool hasExpired = false; 
   late  Timer timer;
@@ -50,6 +48,7 @@ onPhoneNumberChanges(PhoneNumber number) {
    dialCode = number.isoCode.toString();
     notifyListeners();
   }
+
  updatePin(String code) {
   pinCtrl.text = code;
   log(code);
@@ -90,8 +89,8 @@ onPhoneNumberChanges(PhoneNumber number) {
   
   }
   launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       // Show an error message if the URL can't be launched
       throw 'Could not launch $url';
