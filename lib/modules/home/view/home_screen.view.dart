@@ -4,10 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
-
+import 'package:neethusacademy/modules/splash/controller/splash_controller.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../../../global/config/databox.dart';
 import '../../course/widget/alertbox.widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,8 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    String course = userSavedBox.get('course') ?? ''; // Retrieve the course value
-    homeUrl = "https://esightsolutions.in/neethusapp/demo2/?course=$course"; // Initialize homeUrl here
+    var splashCtrl = Provider.of<SplashController>(context, listen: false);
+  
+    
+    homeUrl = splashCtrl.webLink;
   }
 
   @override

@@ -19,8 +19,6 @@ final Connectivity _connectivity =
     Connectivity(); 
 
 Future<Response> httpApiCall({
-  
-
   required HttpMethods tHttp,
   Object? body,
   Map<String, String>? headers,

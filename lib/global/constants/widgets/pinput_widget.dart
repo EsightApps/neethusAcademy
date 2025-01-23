@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import '../styles/colors.dart';
-import 'package:sms_autofill/sms_autofill.dart';
 class PinWidget extends StatefulWidget {
   const PinWidget({
     super.key,
@@ -19,29 +18,8 @@ class PinWidget extends StatefulWidget {
   State<PinWidget> createState() => _PinWidgetState();
 }
 
-class _PinWidgetState extends State<PinWidget> with CodeAutoFill {
-  @override
-  void initState() {
-    super.initState();
-   
-    SmsAutoFill().listenForCode(); 
-  }
-
-  @override
-  void codeUpdated() {
-  
-    setState(() {
-      widget.controller.text = code ?? ''; 
-      
-    });
-    widget.onChanged(code.toString());  
-  }
-
-  @override
-  void dispose() {
-    SmsAutoFill().unregisterListener(); 
-    super.dispose();
-  }
+class _PinWidgetState extends State<PinWidget>  {
+ 
 
   @override
   Widget build(BuildContext context) {

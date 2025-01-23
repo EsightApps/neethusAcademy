@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neethusacademy/global/constants/images/images.dart';
 import 'package:neethusacademy/global/constants/styles/colors.dart';
+import 'package:neethusacademy/modules/splash/controller/splash_controller.dart';
+import 'package:provider/provider.dart';
 import '../../../global/config/databox.dart';
 import '../../../global/config/db_key.dart';
 import '../../home/view/home_screen.view.dart';
@@ -20,6 +22,8 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState(){
     super.initState();
+    var splashCtrl = Provider.of<SplashController>(context, listen: false);
+   splashCtrl.getWebLink();
     Future.delayed(const Duration(seconds: 5),(){
       String ? token = userSavedBox.get(DbKey().userSaved);
       String ? course = userSavedBox.get('course');
@@ -29,7 +33,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
         Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>  HomeScreen(url:'https://esightsolutions.in/neethusapp/demo2/?course=${course}'),
+                                builder: (context) =>  HomeScreen(url:splashCtrl.webLink),
                               ),(routes){
                                 return false;
                               }

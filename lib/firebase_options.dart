@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '246497695550',
     projectId: 'neethu-s-academy',
     storageBucket: 'neethu-s-academy.firebasestorage.app',
-    iosBundleId: 'com.example.NeethusApp',
+    iosBundleId: 'com.esightbusinesssolutions.NeethusApp',
   );
 }

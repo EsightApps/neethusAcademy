@@ -1,25 +1,33 @@
 import 'dart:developer';
-import 'package:permission_handler/permission_handler.dart';
+
 import 'package:geolocator/geolocator.dart';
 
 class LocationService {
-Future<void> requestLocationAndFetchDetails() async {
-  // Step 1: Request location permission
-  PermissionStatus permissionStatus = await Permission.location.request();
+  Future<void> checkLocationServiceAndPermission() async {
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      await Geolocator.openLocationSettings();
+      return;
+    }
 
-  // Step 2: Check if permission is granted
-  if (permissionStatus.isGranted) {
-    // Permission granted, get the location
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        log("Location permission denied.");
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      log("Location permissions are permanently denied. Cannot request.");
+      return;
+    }
+
+    // Permissions are granted; fetch the location
     Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
     );
-  log("Latitude: ${position.latitude}, Longitude: ${position.longitude}");
-    
-    // Use the position object as needed
-    // For example, return position or store it in a variable
-  } else if (permissionStatus.isDenied || permissionStatus.isPermanentlyDenied) {
-    log("Location permission denied. Cannot fetch location.");
-    // Handle the case where permission is denied (show a dialog, etc.)
+    log("Location: ${position.latitude}, ${position.longitude}");
   }
-}
 }

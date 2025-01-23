@@ -73,7 +73,6 @@ onPhoneNumberChanges(PhoneNumber number) {
     otpVal = json.decode(response.body)['0']['otp_val'].toString();
     phoneNum = json.decode(response.body)['0']['phone_number'].toString();
     log(otpVal);
-
     log(phoneNum);
     notifyListeners();
     log('success');

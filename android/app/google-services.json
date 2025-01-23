@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:246497695550:android:87eb600d7c560363d5fe6f",
         "android_client_info": {
-          "package_name": "com.example.NeethusApp"
+          "package_name": "com.esightbusinesssolutions.NeethusApp"
         }
       },
       "oauth_client": [],
@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:246497695550:android:eb9a7dcf9799e4c6d5fe6f",
         "android_client_info": {
-          "package_name": "com.example.NeethusApp"
+          "package_name": "com.esightbusinesssolutions.NeethusApp"
         }
       },
       "oauth_client": [],
