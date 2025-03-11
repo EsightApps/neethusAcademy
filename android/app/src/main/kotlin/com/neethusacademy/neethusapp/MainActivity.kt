@@ -1,4 +1,4 @@
-package com.esightbusinesssolutions.NeethusApp
+package com.NeethusAcademy.NeethusApp
 
 import io.flutter.embedding.android.FlutterActivity
 

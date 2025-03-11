@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neethusacademy/global/constants/widgets/common_%20button.widget.dart';
-
 import '../../../global/constants/styles/colors.dart';
 import '../../../global/constants/styles/text_styles.dart';
+import '../../../global/constants/widgets/common_ button.widget.dart';
 
 class AlertBoxWidget extends StatelessWidget {
   const AlertBoxWidget(

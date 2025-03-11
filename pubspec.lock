@@ -185,14 +185,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
-  equatable:
-    dependency: transitive
-    description:
-      name: equatable
-      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -217,30 +209,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.1"
-  firebase_core:
-    dependency: "direct main"
-    description:
-      name: firebase_core
-      sha256: d851c1ca98fd5a4c07c747f8c65dacc2edd84a4d9ac055d32a5f0342529069f5
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.10.1"
-  firebase_core_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_core_platform_interface
-      sha256: d7253d255ff10f85cfd2adaba9ac17bae878fa3ba577462451163bd9f1d1f0bf
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.4.0"
-  firebase_core_web:
-    dependency: transitive
-    description:
-      name: firebase_core_web
-      sha256: fbc008cf390d909b823763064b63afefe9f02d8afdb13eb3f485b871afee956b
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.19.0"
   fixnum:
     dependency: transitive
     description:
@@ -480,15 +448,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.5.2"
-  intl_phone_number_input:
+  intl_phone_field:
     dependency: "direct main"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: f57851da7d183582261fe2a85dc0b6cc71767c44
-      url: "https://github.com/Shahidbangash/intl_phone_number_input.git"
-    source: git
-    version: "0.7.5"
+      name: intl_phone_field
+      sha256: "73819d3dfcb68d2c85663606f6842597c3ddf6688ac777f051b17814fe767bbf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   js:
     dependency: transitive
     description:
@@ -529,31 +496,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
-  libphonenumber_platform_interface:
-    dependency: transitive
-    description:
-      name: libphonenumber_platform_interface
-      sha256: f801f6c65523f56504b83f0890e6dad584ab3a7507dca65fec0eed640afea40f
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.2"
-  libphonenumber_plugin:
-    dependency: transitive
-    description:
-      path: libphonenumber_plugin
-      ref: main
-      resolved-ref: "6740b85c909b07caedf023a95b7d78c6ff6e0403"
-      url: "https://github.com/Shahidbangash/plugin_libphonenumber.git"
-    source: git
-    version: "0.3.3"
-  libphonenumber_web:
-    dependency: transitive
-    description:
-      name: libphonenumber_web
-      sha256: "8186f420dbe97c3132283e52819daff1e55d60d6db46f7ea5ac42f42a28cc2ef"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.2"
   loading_animation_widget:
     dependency: "direct main"
     description:

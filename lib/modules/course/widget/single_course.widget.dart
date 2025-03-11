@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/global/constants/styles/text_styles.dart';
+import '../../../global/constants/styles/colors.dart';
+import '../../../global/constants/styles/text_styles.dart';
+
 
 class CourseWidgetCard extends StatelessWidget {
   const CourseWidgetCard({super.key,required this.courseName,required this.courseImage,required this.onPressed});

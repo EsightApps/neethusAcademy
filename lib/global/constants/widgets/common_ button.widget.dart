@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/global/constants/styles/text_styles.dart';
-import 'package:neethusacademy/global/constants/ui/ui_constants.dart';
+import '../styles/colors.dart';
+import '../styles/text_styles.dart';
+import '../ui/ui_constants.dart';
+
 
 class CommonButtonWidget extends StatelessWidget {
   const CommonButtonWidget(

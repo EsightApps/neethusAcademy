@@ -1,13 +1,13 @@
 import 'dart:io';
-import 'package:neethusacademy/global/config/databox.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:neethusacademy/global/constants/provider/providers.dart';
 import 'package:provider/provider.dart';
 import 'global/config/config.dart';
+import 'global/config/databox.dart';
+import 'global/constants/provider/providers.dart';
 import 'global/constants/routes/routes.dart';
 import 'global/constants/styles/colors.dart';
 
@@ -15,8 +15,7 @@ import 'global/constants/styles/colors.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  //*--
+ 
   Directory document = await getApplicationDocumentsDirectory();
   Hive.init(document.path);
  userSavedBox =  await Hive.openBox<String>(Config.dbName);
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
                 initialRoute: '/',
                 theme: const CupertinoThemeData(
                     barBackgroundColor: kWhite,
-                    primaryColor: kBlack),
+                    primaryColor: kWhite,),
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: const [
                   DefaultWidgetsLocalizations.delegate,
@@ -53,11 +52,11 @@ class MyApp extends StatelessWidget {
                title: "Neethu's App",
                 initialRoute: '/',
                 debugShowCheckedModeBanner: false,
-                theme: ThemeData.light().copyWith(
-                  searchBarTheme: const SearchBarThemeData(
-                      backgroundColor:
-                         WidgetStatePropertyAll(kWhite)),
-                )));
+                darkTheme: ThemeData.light(),
+                theme: ThemeData(),
+                themeMode: ThemeMode.system,
+                
+               ));
   }
 }
 

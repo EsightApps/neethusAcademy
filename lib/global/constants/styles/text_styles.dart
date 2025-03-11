@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:neethusacademy/global/constants/styles/colors.dart';
+
+import 'colors.dart';
+
 
 class KStyles {
 

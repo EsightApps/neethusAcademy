@@ -1,14 +1,14 @@
-
-
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/modules/splash/controller/splash_controller.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../global/constants/styles/colors.dart';
 import '../../course/widget/alertbox.widget.dart';
+import '../../splash/controller/splash_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   final String url;
@@ -21,31 +21,30 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late InAppWebViewController webViewController;
   double progress = 0.0;
-  late String homeUrl;  
+  late String homeUrl;
   final String mockTestUrl = "https://mocktestportal.neethusacademy.com/";
+  bool isHomeLoading = false;
 
   @override
   void initState() {
     super.initState();
     var splashCtrl = Provider.of<SplashController>(context, listen: false);
-  
-    
+   
     homeUrl = splashCtrl.webLink;
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
-    
     return WillPopScope(
       onWillPop: () async {
-        // Get the current URL from the WebView
         var currentUrl = await webViewController.getUrl();
         if (currentUrl?.toString() == mockTestUrl) {
-          // If on the Mock Test URL, navigate to the home URL
-          await webViewController.loadUrl(urlRequest: URLRequest(url: WebUri(homeUrl)));
-          return false; // Prevent the app from exiting
+          await webViewController.loadUrl(
+              urlRequest: URLRequest(url: WebUri(homeUrl)));
+          return false;
         } else if (currentUrl?.toString() == homeUrl) {
-          // If on the Home URL, show exit confirmation dialog
           bool exitApp = await showDialog(
             context: context,
             builder: (context) {
@@ -55,17 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 subtitle: 'Exit',
                 onPressed: () {
                   Navigator.of(context).pop(true);
-                  
                 },
               );
             },
           );
           if (exitApp == true) {
-            SystemNavigator.pop(); 
+            SystemNavigator.pop();
           }
           return false;
         } else {
-        
           await webViewController.goBack();
           return false;
         }
@@ -76,84 +73,115 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SafeArea(
           child: Stack(
             children: [
-              // WebView
               InAppWebView(
+                initialSettings: InAppWebViewSettings(forceDark: ForceDark.OFF),
                 initialUrlRequest: URLRequest(
                   url: WebUri(widget.url),
                 ),
-                onWebViewCreated: (controller) {
-                  webViewController = controller;
-                },
+               onWebViewCreated: (controller) {
+ 
+    webViewController = controller;
+  
+},
+
                 onProgressChanged: (controller, int progressValue) {
-                  setState(() {
-                    progress = progressValue / 100.0;
-                  });
+                  if (mounted) {
+                    setState(() {
+                      progress = progressValue / 100.0;
+                    });
+                  }
+                },
+                onLoadStart: (controller, url) {
+                  if (url?.toString() == homeUrl) {
+                    setState(() {
+                      isHomeLoading = true;
+                    });
+                  }
                 },
                 onLoadStop: (controller, url) async {
-                  // Clear WebView history when loading the home URL
                   if (url?.toString() == homeUrl) {
-                    await webViewController.clearHistory();
+                    // Clear history only for Android
+                    if (Platform.isAndroid) {
+                      await webViewController.clearHistory();
+                    }
+                    setState(() {
+                      isHomeLoading = false;
+                    });
                   }
                 },
                 shouldOverrideUrlLoading: (controller, navigationAction) async {
                   var url = navigationAction.request.url.toString();
-
-                  // Handle YouTube links
-                  if (url.contains("youtube.com") || url.contains("youtu.be")) {
+                  if (url.contains("instagram.com") ||
+                      url.contains("youtube.com") ||
+                      url.contains("youtu.be") ||
+                      url.contains("facebook.com") ||
+                      url.contains("fb.me")) {
                     if (await canLaunch(url)) {
-                      await launchUrl(
-                        Uri.parse(url),
-                        mode: LaunchMode.externalApplication,
-                      );
+                      await launchUrl(Uri.parse(url),
+                          mode: LaunchMode.externalApplication);
                     }
                     return NavigationActionPolicy.CANCEL;
                   }
-
-                  // Handle Facebook redirects and intent URLs
                   if (url.startsWith("intent://")) {
                     try {
                       var fallbackUrl = Uri.decodeFull(
-                        url.split('S.browser_fallback_url=')[1].split(';end')[0],
+                        url
+                            .split('S.browser_fallback_url=')[1]
+                            .split(';end')[0],
                       );
                       if (await canLaunch(fallbackUrl)) {
-                        await launchUrl(
-                          Uri.parse(fallbackUrl),
-                          mode: LaunchMode.externalApplication,
-                        );
+                        await launchUrl(Uri.parse(fallbackUrl),
+                            mode: LaunchMode.externalApplication);
                       }
                     } catch (e) {
                       print("Failed to handle intent:// URL: $e");
                     }
                     return NavigationActionPolicy.CANCEL;
                   }
-
-                  if (url.contains("facebook.com") || url.contains("fb.me")) {
-                    if (await canLaunch(url)) {
-                      await launchUrl(
-                        Uri.parse(url),
-                        mode: LaunchMode.externalApplication,
+                  if (url.startsWith("mailto:")) {
+                    try {
+                      final emailUri = Uri.parse(url);
+                      if (await canLaunchUrl(emailUri)) {
+                        await launchUrl(emailUri,
+                            mode: LaunchMode.externalApplication);
+                      } else {
+                        String email = emailUri.path;
+                        String? subject = emailUri.queryParameters['subject'];
+                        String? body = emailUri.queryParameters['body'];
+                        String gmailUrl = Uri.encodeFull(
+                          "https://mail.google.com/mail/?view=cm&fs=1&to=$email"
+                          "${subject != null ? '&su=$subject' : ''}"
+                          "${body != null ? '&body=$body' : ''}",
+                        );
+                        if (await canLaunchUrl(Uri.parse(gmailUrl))) {
+                          await launchUrl(Uri.parse(gmailUrl),
+                              mode: LaunchMode.externalApplication);
+                        } else {
+                          throw "No email app available.";
+                        }
+                      }
+                    } catch (e) {
+                      print("Error handling mailto link: $e");
+                      Fluttertoast.showToast(
+                        msg: "No email app available to handle this link.",
+                        backgroundColor: kBlack,
                       );
                     }
                     return NavigationActionPolicy.CANCEL;
                   }
-
-                  // Handle mail and phone links
-                  if (url.startsWith("tel:") || url.startsWith("mailto:")) {
+                  if (url.startsWith("tel:")) {
                     if (await canLaunch(url)) {
-                      await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+                      await launchUrl(Uri.parse(url),
+                          mode: LaunchMode.externalApplication);
                     }
                     return NavigationActionPolicy.CANCEL;
                   }
-
                   return NavigationActionPolicy.ALLOW;
                 },
               ),
-
-              // Circular Progress Indicator
-              if (progress > 0 && progress < 1)
+              if (isHomeLoading)
                 Center(
                   child: CircularProgressIndicator(
-                    value: progress,
                     strokeWidth: 4.w,
                     color: kBlue,
                   ),

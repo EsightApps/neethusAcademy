@@ -1,13 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neethusacademy/global/constants/images/images.dart';
-import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/modules/splash/controller/splash_controller.dart';
 import 'package:provider/provider.dart';
 import '../../../global/config/databox.dart';
 import '../../../global/config/db_key.dart';
+import '../../../global/constants/images/images.dart';
+import '../../../global/constants/styles/colors.dart';
 import '../../home/view/home_screen.view.dart';
+import '../controller/splash_controller.dart';
 
 
 

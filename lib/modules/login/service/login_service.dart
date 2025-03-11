@@ -1,6 +1,7 @@
+import 'package:NeethusApp/global/constants/interceptor.dart';
 import 'package:http/http.dart';
-import 'package:neethusacademy/global/api_urls.dart';
-import 'package:neethusacademy/global/constants/interceptor.dart';
+
+import '../../../global/api_urls.dart';
 
 class LoginService {
 

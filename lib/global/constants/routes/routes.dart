@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:neethusacademy/modules/course/view/course_screen.view.dart';
-import 'package:neethusacademy/modules/login/view/login_screen.view.dart';
-import 'package:neethusacademy/modules/login/view/otp_screen.view.dart';
-import 'package:neethusacademy/modules/splash/view/splash_screen.view.dart';
+
+import '../../../modules/course/view/course_screen.view.dart';
+import '../../../modules/login/view/login_screen.view.dart';
+import '../../../modules/login/view/otp_screen.view.dart';
+import '../../../modules/splash/view/splash_screen.view.dart';
+
 
 Map<String, Widget Function(BuildContext)> routes = {
     '/' : (BuildContext context) => const SplashScreenView(),

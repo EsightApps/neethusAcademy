@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:neethusacademy/modules/course/service/course_service.dart';
+import '../../course/service/course_service.dart';
+
 
 class SplashController extends ChangeNotifier {
   String webLink = '';

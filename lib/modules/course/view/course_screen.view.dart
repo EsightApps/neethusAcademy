@@ -1,16 +1,18 @@
+import 'package:NeethusApp/modules/course/controller/course_controller.dart';
+import 'package:NeethusApp/modules/login/controller/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:neethusacademy/global/constants/images/images.dart';
-import 'package:neethusacademy/global/constants/styles/colors.dart';
-import 'package:neethusacademy/global/constants/styles/text_styles.dart';
-import 'package:neethusacademy/modules/splash/controller/splash_controller.dart';
-import 'package:neethusacademy/modules/course/widget/alertbox.widget.dart';
-import 'package:neethusacademy/modules/course/widget/single_course.widget.dart';
 import 'package:provider/provider.dart';
 import '../../../global/config/databox.dart';
-import '../../../global/constants/location/location_service.dart';
+import '../../../global/constants/images/images.dart';
+import '../../../global/constants/styles/colors.dart';
+import '../../../global/constants/styles/text_styles.dart';
 import '../../home/view/home_screen.view.dart';
+import '../../splash/controller/splash_controller.dart';
+import '../widget/alertbox.widget.dart';
+import '../widget/single_course.widget.dart';
 
 class CourseScreenView extends StatefulWidget {
   const CourseScreenView({super.key});
@@ -23,9 +25,11 @@ class _CourseScreenViewState extends State<CourseScreenView> {
   @override
   void initState() {
     super.initState();
-    LocationService().checkLocationServiceAndPermission();
     
-   
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      var courseCtrl = Provider.of<CourseController>(context, listen: false);
+      courseCtrl.checkLocationServiceAndPermission();
+    });
   }
 
   List courses = ['OET', 'IELTS', 'NCLEX-RN', 'GERMAN', 'CBT', 'OSCE', 'TOEFL'];
@@ -53,7 +57,7 @@ class _CourseScreenViewState extends State<CourseScreenView> {
           backgroundColor: kWhite,
           appBar: AppBar(
             title: Image.asset(logo),
-            centerTitle: true,
+            centerTitle: false,
             backgroundColor: kBlue,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4.r),
@@ -63,8 +67,9 @@ class _CourseScreenViewState extends State<CourseScreenView> {
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-              child:
-                  Consumer<SplashController>(builder: (context, spalshCtrl, _) {
+              child: Consumer3<SplashController, CourseController,
+                      LoginController>(
+                  builder: (context, spalshCtrl, courseCtrl, logCtrl, _) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -84,6 +89,12 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                       itemBuilder: (BuildContext context, index) {
                         return CourseWidgetCard(
                           onPressed: () {
+                        
+                            Future.delayed(const Duration(seconds: 5), () {
+                                  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+                              courseCtrl.addCourse(logCtrl.userId,
+                                  courses[index], courseCtrl.location);
+                            });
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
@@ -92,6 +103,7 @@ class _CourseScreenViewState extends State<CourseScreenView> {
                                 ), (routes) {
                               return false;
                             });
+
                             userSavedBox.put('course', courses[index]);
                           },
                           courseImage: courseImages[index],

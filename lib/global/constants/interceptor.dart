@@ -4,7 +4,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as https;
-import 'package:neethusacademy/global/config/config.dart';
+import '../config/config.dart';
+
 
 
 
