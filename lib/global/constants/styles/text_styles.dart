@@ -861,9 +861,10 @@ class KStyles {
     );
   }
 
-  Text med11({required String text, Color color = Colors.black, double? height,TextDecoration ? textDecoration}) {
+  Text med11({required String text, Color color = Colors.black, double? height,TextDecoration ? textDecoration,TextAlign ? textAlign}) {
     return Text(
       text,
+      textAlign: textAlign,
       style:GoogleFonts.manrope(
           height: height,
            decoration: textDecoration,
@@ -912,9 +913,9 @@ class KStyles {
   Text med15({required String text, Color color = Colors.black, double? height,TextAlign ? textAlign}) {
     return Text(
       text,textAlign: textAlign,
+      overflow: TextOverflow.visible,
       style:GoogleFonts.manrope(
           height: height,
-       
           fontSize: 15.sp,
           color: color,
           fontWeight: FontWeight.w500),

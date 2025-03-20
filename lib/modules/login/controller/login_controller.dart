@@ -4,14 +4,20 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../../global/constants/styles/colors.dart';
 import '../service/login_service.dart';
 
 class LoginController extends ChangeNotifier {
   TextEditingController phoneCtrl = TextEditingController();
   TextEditingController pinCtrl = TextEditingController();
-  
+  TextEditingController nameCtrl = TextEditingController();
+
+  String countryCode = '91';
+  setCountryCode(String code) {
+    countryCode = code;
+    notifyListeners();
+  }
+
   ValueNotifier<Color> buttonColor =
       ValueNotifier<Color>(const Color.fromARGB(255, 146, 147, 147));
   FocusNode pinFocus = FocusNode();
@@ -19,7 +25,6 @@ class LoginController extends ChangeNotifier {
   bool isResendEnabled = false;
   bool hasExpired = false;
   late Timer timer;
- 
 
   startTimer() {
     start = 30;
@@ -45,9 +50,6 @@ class LoginController extends ChangeNotifier {
     startTimer();
   }
 
-  String dialCode = 'IN';
-  
-
   updatePin(String code) {
     pinCtrl.text = code;
     log(code);
@@ -68,8 +70,9 @@ class LoginController extends ChangeNotifier {
     otpVal = '';
     phoneNum = '';
     val == 0 ? (apiLoading = true) : '';
-    final response =
-        await LoginService().sendOtp({'phone_number': phoneCtrl.text});
+    final response = await LoginService()
+        .sendOtp({'name' : nameCtrl.text,
+          'phone_number': '$countryCode${phoneCtrl.text}'});
     if (response.statusCode == 200) {
       val == 0 ? (apiLoading = false) : '';
       otpVal = json.decode(response.body)['0']['otp_val'].toString();

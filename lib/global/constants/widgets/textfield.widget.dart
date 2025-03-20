@@ -32,7 +32,7 @@ class PhoneTextField extends StatefulWidget {
 }
 
 class _PhoneTextFieldState extends State<PhoneTextField> {
-  int maxLength = 10; // Default max length
+  int maxLength = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           child: SizedBox(
             child: IntlPhoneField(
               disableLengthCheck: true,
-      
+
               pickerDialogStyle: PickerDialogStyle(
                 searchFieldPadding: EdgeInsets.all(5),
                 listTileDivider: Divider(
@@ -67,7 +67,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
 
               controller: widget.controller,
               autovalidateMode: widget.autoValidateMode,
-              initialCountryCode: logCtrl.dialCode,
+              initialCountryCode: 'IN',
               onChanged: (PhoneNumber number) {
                 widget.onChanged(number);
               },
@@ -87,6 +87,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                 setState(() {
                   maxLength = countryData.maxLength;
                   widget.controller.clear();
+                  logCtrl.setCountryCode(countryData.dialCode);
                 });
 
                 widget.onCountryChanged(maxLength);
@@ -95,6 +96,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                 LengthLimitingTextInputFormatter(maxLength)
               ], // Enforce max length
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(7.sp),
                 hintStyle: GoogleFonts.manrope(
                   color: kBorderGrey,
                   fontWeight: FontWeight.normal,
@@ -105,10 +107,12 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                   fontWeight: FontWeight.normal,
                   fontSize: 15.sp,
                 ),
-                isDense: true,
+                isDense: false,
                 hintText: "Enter your mobile number",
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: kBorderGrey),
+                  borderSide: BorderSide(
+                    color: kBorderGrey,
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: kBorderGrey),

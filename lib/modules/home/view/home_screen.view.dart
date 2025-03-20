@@ -169,13 +169,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                     return NavigationActionPolicy.CANCEL;
                   }
-                  if (url.startsWith("tel:")) {
-                    if (await canLaunch(url)) {
-                      await launchUrl(Uri.parse(url),
-                          mode: LaunchMode.externalApplication);
-                    }
-                    return NavigationActionPolicy.CANCEL;
-                  }
+                 if (url.startsWith("tel:")) {
+  if (await canLaunch(url)) {
+    await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+  } else {
+    // Fallback: copy phone number and show a message.
+    Clipboard.setData(ClipboardData(text: url.replaceFirst("tel:", "")));
+    Fluttertoast.showToast(
+      msg: "This device cannot make phone calls. The number has been copied to your clipboard.",
+      backgroundColor: kBlack,
+    );
+  }
+  return NavigationActionPolicy.CANCEL;
+}
+
                   return NavigationActionPolicy.ALLOW;
                 },
               ),
